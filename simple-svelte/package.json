@@ -20,6 +20,6 @@
   "dependencies": {
     "sirv-cli": "^1.0.0",
     "stats.js": "^0.17.0",
-    "web-ifc-viewer": "1.0.14"
+    "web-ifc-viewer": "1.0.19"
   }
 }

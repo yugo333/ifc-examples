@@ -33,7 +33,7 @@
                     {/each}
                 {/if}
             {:else}
-                <span>
+                <span class:selected="{$expID === expressID}">
                     <span class="no-arrow"/>
                     {type + ' - ' + expressID}
                 </span>
