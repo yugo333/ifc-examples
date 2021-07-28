@@ -14,7 +14,7 @@ function startViewer(container) {
     let newViewer = new IfcViewerAPI({container});
     newViewer.addAxes();
     newViewer.addGrid();
-    newViewer.setWasmPath("wasm/");
+    newViewer.IFC.setWasmPath("wasm/");
     return newViewer
 }
 
@@ -28,7 +28,7 @@ export const expID = writable(0)
 
 export const IfcItemProperties = derived(
 	[viewer, modelID, expID],
-	([$viewer, $modelID, $expId]) => $viewer.getProperties($modelID, $expId, true)
+	([$viewer, $modelID, $expId]) => $viewer.IFC.getProperties($modelID, $expId, true)
 );
 
 export const IfcPropertyValuesFormatted = derived(
