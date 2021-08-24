@@ -28,7 +28,7 @@ class App extends React.Component {
         const viewer = new IfcViewerAPI({container});
         viewer.addAxes()
         viewer.addGrid()
-        viewer.setWasmPath('../../');
+        viewer.IFC.setWasmPath('../../');
 
         this.viewer = viewer;
 
@@ -38,7 +38,7 @@ class App extends React.Component {
 
     onDrop = async (files) => {
         this.setState({ loading_ifc: true })
-        await this.viewer.loadIfc(files[0], true);
+        await this.viewer.IFC.loadIfc(files[0], true);
         this.setState({ loaded: true, loading_ifc: false })
     };
 
