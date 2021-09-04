@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run config-web-ifc && ng serve",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "config-web-ifc": "cpy config/package.json node_modules/web-ifc && cpy config/package.json node_modules/web-ifc-three/node_modules/web-ifc"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -25,8 +24,8 @@
     "rxjs": "~6.6.0",
     "three": "^0.129.0",
     "tslib": "^2.1.0",
-    "web-ifc": "^0.0.20",
-    "web-ifc-viewer": "1.0.14",
+    "web-ifc": "^0.0.24",
+    "web-ifc-viewer": "^1.0.52",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

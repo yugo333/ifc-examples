@@ -7597,10 +7597,10 @@ three-mesh-bvh@^0.3.7:
   resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.3.7.tgz#39a05d2d53f66b5df486d08622801a1850734934"
   integrity sha512-veRJRj0mY2rBj9yRZVg/E98wd6e7AzqzTq/+6ispY6m50gYuGitUNih2dRQzbkMcwRECLURvuudb9BFW3/swAw==
 
-three@^0.128.0:
-  version "0.128.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.128.0.tgz#884dacca6a330e45600a09ec5439283f50b76aa6"
-  integrity sha512-i0ap/E+OaSfzw7bD1TtYnPo3VEplkl70WX5fZqZnfZsE3k3aSFudqrrC9ldFZfYFkn1zwDmBcdGfiIm/hnbyZA==
+three-mesh-bvh@^0.4.1:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.4.3.tgz#da5ac7db2e61aa0aa66dc0070a6085bcfbd1281c"
+  integrity sha512-4CO1dU73hQRwGgeOL05CnsKkIa0LgNCH6S8t66D9nvSiyK9wDzrSqzGVd8e+eUytFoliYHc/lwoW0uamrmXo5w==
 
 three@^0.129.0:
   version "0.129.0"
@@ -7967,31 +7967,31 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-web-ifc-three@0.0.31:
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/web-ifc-three/-/web-ifc-three-0.0.31.tgz#258a546885427cd57dab9bef92d12d2c8da4ceeb"
-  integrity sha512-eQJCI2GppIQhqIBytUbQnboViXd4Bx2NRemY2S36z1uFom13RY2FMqHOKU9C5BB+xhENPWabVdFm29kOF8CIxQ==
+web-ifc-three@^0.0.56:
+  version "0.0.56"
+  resolved "https://registry.yarnpkg.com/web-ifc-three/-/web-ifc-three-0.0.56.tgz#f6f170314ee29270e790f6cf23780d183daa1bf1"
+  integrity sha512-u3hfpJaSc1gBUnDBUNST4oXpq8bL0LPSgfZVy4feFB8V0XBePCEQ4b7/0N+kALNjsX2wObDiHzhFDausECHMMA==
   dependencies:
-    stats.js "^0.17.0"
-    three "^0.128.0"
     three-mesh-bvh "^0.3.7"
-    web-ifc "0.0.20"
+    web-ifc "^0.0.24"
 
-web-ifc-viewer@1.0.14:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/web-ifc-viewer/-/web-ifc-viewer-1.0.14.tgz#9ec374d202f2c2fa8049e8ad069eaec2b8cc4fce"
-  integrity sha512-uGVfat1TdI59+yWr2ZffPVkruuF6cvrv2TxDAaLClWyzG9xfMawn1dylU1CWccOK6RNw1QQNin1E7lkhDeWbNw==
+web-ifc-viewer@^1.0.45, web-ifc-viewer@^1.0.52:
+  version "1.0.52"
+  resolved "https://registry.yarnpkg.com/web-ifc-viewer/-/web-ifc-viewer-1.0.52.tgz#36cc0fbcd7f275a7f6b62e61afcd1b2b84c5254d"
+  integrity sha512-ajqT975CbCsUGcfcw2fgqXIPcxWCc+r6L7ulDihGwuVCiXzKhUKXsCPWdVIEZz0wOh1vYP5zPl1XaCgmgGZCdg==
   dependencies:
     "@parametricos/bcf-js" "^0.1.2"
     "@types/stats.js" "^0.17.0"
     stats.js "^0.17.0"
-    three "^0.128.0"
-    web-ifc-three "0.0.31"
+    three-mesh-bvh "^0.4.1"
+    web-ifc "^0.0.24"
+    web-ifc-three "^0.0.56"
+    web-ifc-viewer "^1.0.45"
 
-web-ifc@0.0.20, web-ifc@^0.0.20:
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/web-ifc/-/web-ifc-0.0.20.tgz#b1bc302de518d8ce3e3789b01c06df0a6b24b2c5"
-  integrity sha512-mcmUsUWGPpjdRabIErcZO9xsBbzvVz5lka3J27MGB7ea4lzybRjKyRNDqoGY5qJ7P37KdDgd9PVBLYmvgVto2Q==
+web-ifc@^0.0.24:
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/web-ifc/-/web-ifc-0.0.24.tgz#804bb7bb6245f52e913dce638ffe33969cc31740"
+  integrity sha512-9AH/LTbPxY1UaFZlwzYL+XuEwfQoROEf0WVz+UmmoTAVsIINq6DbmuiWSyDecWCBYdbanpQoNgJhG5fThWAzMA==
 
 webpack-dev-middleware@4.1.0:
   version "4.1.0"

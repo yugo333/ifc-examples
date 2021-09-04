@@ -51,7 +51,7 @@ export class IfcService {
   }
 
   select(modelID: number, expressID: number, pick = true) {
-    if (pick) this.ifcViewer?.pickIfcItemByID(modelID, expressID);
+    if (pick) this.ifcViewer?.pickIfcItemsByID(modelID, [expressID]);
     this.currentModel = modelID;
     this.onSelectActions.forEach((action) => action(modelID, expressID));
   }
@@ -71,7 +71,7 @@ export class IfcService {
   };
 
   private handleMouseMove = (_event: Event) => {
-    this.ifcViewer?.prepickIfcItem();
+    this.ifcViewer?.prePickIfcItem();
   };
 
   private notFoundError(item: string) {
