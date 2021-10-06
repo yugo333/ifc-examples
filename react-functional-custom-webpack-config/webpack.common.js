@@ -1,15 +1,7 @@
-const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: {
     main: "./src/index.js",
-  },
-  resolve: {
-    alias: {
-      Redux: path.resolve(__dirname, "src/Redux"),
-      Constants: path.resolve(__dirname, "src/Constants"),
-      Shared: path.resolve(__dirname, "src/Shared"),
-    },
   },
   module: {
     exprContextCritical: false,
