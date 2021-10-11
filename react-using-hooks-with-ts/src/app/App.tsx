@@ -21,7 +21,6 @@ function App() {
   }, []);
   useEffect(() => {
     if (viewer) {
-      viewer.IFC.setWasmPath('../../');
       window.onmousemove = viewer.IFC.prePickIfcItem;
     }
   }, [viewer]);
@@ -59,4 +58,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };
