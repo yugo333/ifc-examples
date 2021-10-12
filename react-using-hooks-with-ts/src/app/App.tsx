@@ -2,6 +2,7 @@ import React, { useEffect, createRef, useState } from 'react';
 
 import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
 import {
+  Alert,
   Backdrop,
   Box,
   Dialog,
@@ -17,6 +18,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Snackbar,
   Typography,
 } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
@@ -98,14 +100,16 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 function App() {
   const theme = useTheme();
+
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [isDialogOpen, setDialogOpen] = useState(false);
-  const [test, setTest] = useState(false);
-
+  const [isSnackbarOpen, setSnackbarOpen] = useState(false);
+  const [isClippingPaneSelected, setClippingPaneSelected] = useState(false);
   const [isLoading, setLoading] = useState(false)
 
   const ifcContainer = createRef<HTMLDivElement>();
   const [viewer, setViewer] = useState<IfcViewerAPI>();
+  const [ifcLoadingErrorMessage, setIfcLoadingErrorMessage] = useState<string>();
 
   useEffect(() => {
     if (ifcContainer.current) {
@@ -125,19 +129,31 @@ function App() {
   const ifcOnLoad = async (e) => {
     const file = e && e.target && e.target.files && e.target.files[0];
     if (file && viewer) {
+
+      // reset
+      setIfcLoadingErrorMessage('');
       setLoading(true);
-      await viewer.IFC.loadIfc(file, true);
+
+      // load file
+      await viewer.IFC.loadIfc(file, true, ifcOnLoadError);
+
+      // update information
+      setSnackbarOpen(true);
       setLoading(false)
     }
+  };
+
+  const ifcOnLoadError = async (err) => {
+    setIfcLoadingErrorMessage(err.toString());
   };
 
   const toggleClippingPlanes = () => {
     if (viewer) {
       viewer.toggleClippingPlanes();
       if (viewer.clipper.active) {
-        setTest(true);
+        setClippingPaneSelected(true);
       } else {
-        setTest(false);
+        setClippingPaneSelected(false);
       }
     }
   }
@@ -189,7 +205,7 @@ function App() {
               </ListItem>
             </label>
             <ListItem button key={'showPlane'} onClick={() => toggleClippingPlanes()}
-              selected={test}>
+              selected={isClippingPaneSelected}>
               <ListItemIcon>
                 <CompareArrowsSharp />
               </ListItemIcon>
@@ -242,6 +258,16 @@ function App() {
           <GitHub />
         </DialogContent>
       </Dialog>
+
+      <Snackbar open={isSnackbarOpen} autoHideDuration={6000} onClose={() => setSnackbarOpen(false)}>
+        {ifcLoadingErrorMessage ?
+          <Alert onClose={() => setSnackbarOpen(false)} severity="error" sx={{ width: '100%' }}>
+            {ifcLoadingErrorMessage}
+          </Alert>
+          : <Alert onClose={() => setSnackbarOpen(false)} severity="success" sx={{ width: '100%' }}>
+            Model loaded successfully!
+          </Alert>}
+      </Snackbar>
     </>
   );
 }
