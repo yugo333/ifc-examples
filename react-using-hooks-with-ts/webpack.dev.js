@@ -1,14 +1,14 @@
-const path = require("path");
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common");
+const path = require('path');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
-  mode: "development",
-  devtool: "eval-source-map",
+  mode: 'development',
+  devtool: 'eval-source-map',
   output: {
-    path: path.resolve(__dirname, "build"),
-    publicPath: "/",
-    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
+    filename: '[name].bundle.js',
   },
   devServer: {
     historyApiFallback: true,
@@ -20,7 +20,7 @@ module.exports = merge(common, {
         include: [
           path.resolve(__dirname, 'src')
         ],
-        use: ["style-loader", "css-loader"]
+        use: ['style-loader', 'css-loader']
       }
     ]
   }
