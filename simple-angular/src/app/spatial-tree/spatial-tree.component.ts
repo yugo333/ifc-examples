@@ -36,10 +36,10 @@ export class SpatialTreeComponent {
 
   hasChild = (_: number, node: SpatialNode) => !!node.children && node.children.length > 0;
 
-  updateSpatialTree = (modelID: number, id: number) => {
+  updateSpatialTree = async (modelID: number, id: number) => {
     if (modelID == this.currentModel) return;
     this.currentModel = modelID;
-    const ifcTree = this.ifc.ifcViewer?.getSpatialStructure(modelID) as any;
+    const ifcTree = await this.ifc.ifcViewer?.getSpatialStructure(modelID) as any;
     this.dataSource.data = [ifcTree];
   };
 

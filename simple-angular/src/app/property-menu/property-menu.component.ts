@@ -56,9 +56,9 @@ export class PropertyMenuComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  updateProperties = (modelID: number, id: number) => {
+  updateProperties = async (modelID: number, id: number) => {
     if (modelID == null || id == null) return;
-    const props = this.ifc.ifcViewer?.getProperties(modelID, id, true);
+    const props = await this.ifc.ifcViewer?.getProperties(modelID, id, true);
     this.properties.length = 0;
     this.dataSources = [];
     const allGroups = this.getPropertyGroups(props);

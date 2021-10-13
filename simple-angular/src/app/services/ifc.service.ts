@@ -32,7 +32,7 @@ export class IfcService {
     this.ifcViewer.addAxes();
     this.ifcViewer.addGrid();
     this.ifcViewer.addStats('position:absolute;bottom:0px;left:0px;z-index:1;');
-    this.ifcViewer.setWasmPath('assets/');
+    this.ifcViewer.IFC.setWasmPath('assets/');
   }
 
   setupInputs() {
@@ -51,13 +51,13 @@ export class IfcService {
   }
 
   select(modelID: number, expressID: number, pick = true) {
-    if (pick) this.ifcViewer?.pickIfcItemsByID(modelID, [expressID]);
+    if (pick) this.ifcViewer?.IFC.pickIfcItemsByID(modelID, [expressID]);
     this.currentModel = modelID;
     this.onSelectActions.forEach((action) => action(modelID, expressID));
   }
 
-  pick() {
-    const found = this.ifcViewer?.pickIfcItem();
+  async pick() {
+    const found = await this.ifcViewer?.pickIfcItem();
     if (found == null || found == undefined) return;
     this.select(found.modelID, found.id, false);
   }
@@ -66,12 +66,12 @@ export class IfcService {
 
   };
 
-  private handleDoubleClick = (event: Event) => {
-    this.pick();
+  private handleDoubleClick = async (event: Event) => {
+    await this.pick();
   };
 
   private handleMouseMove = (_event: Event) => {
-    this.ifcViewer?.prePickIfcItem();
+    this.ifcViewer?.IFC.prePickIfcItem();
   };
 
   private notFoundError(item: string) {

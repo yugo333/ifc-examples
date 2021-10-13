@@ -1423,6 +1423,11 @@
   resolved "https://registry.yarnpkg.com/@types/three/-/three-0.129.1.tgz#e488e686132256dfd61cffd4d97ea6cf176a4a8d"
   integrity sha512-31VTcjAQNggIrCH9NVotTYsr5Ws/QMGGTaMK6RP3EgyzW2WEuZdm25TNidd6PJ3e4a6/hbswNacnTsjwc7ksbw==
 
+"@types/three@^0.131.0":
+  version "0.131.1"
+  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.131.1.tgz#2ee511383c8620f6ce301582214122319e6aca34"
+  integrity sha512-unnjsolcm7R90e4XK9qMq4JYEzly0XQNa0pG8RAOMZeVzj3FLIFPymAYUx4Osz0gY9jFZz8omIQplqiieEE7gw==
+
 "@types/webpack-sources@^0.1.5":
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/@types/webpack-sources/-/webpack-sources-0.1.8.tgz#078d75410435993ec8a0a2855e88706f3f751f81"
@@ -3741,6 +3746,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0,
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
+
+gsap@^3.7.1:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.8.0.tgz#a404dd6ebbaabc92605539aea9d98e3098688064"
+  integrity sha512-cvpzKkWFePDZCycwXwJnDSpTR3j+a4QLQF/t0c+pXqzRESgAYx5hieaoshzZFjbwsARqr0+5c3GKE7wI273w/g==
 
 hammerjs@^2.0.8:
   version "2.0.8"
@@ -7602,10 +7612,10 @@ three-mesh-bvh@^0.4.1:
   resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.4.3.tgz#da5ac7db2e61aa0aa66dc0070a6085bcfbd1281c"
   integrity sha512-4CO1dU73hQRwGgeOL05CnsKkIa0LgNCH6S8t66D9nvSiyK9wDzrSqzGVd8e+eUytFoliYHc/lwoW0uamrmXo5w==
 
-three@^0.129.0:
-  version "0.129.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.129.0.tgz#f5e530bbc96eac5d5b4749cb5da886ef0d42f554"
-  integrity sha512-wiWio1yVRg2Oj6WEWsTHQo5eSzYpEwSBtPSi3OofNpvFbf26HFfb9kw4FZJNjII4qxzp0b1xLB11+tKkBGB1ZA==
+three@^0.133.1:
+  version "0.133.1"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.133.1.tgz#5606f4817d67a09d9212d4ccbd6826564774f8f4"
+  integrity sha512-WydohO8ll949B0FTD6MGz59Yv2Lwj8hvObg/0Heh2r42S6+tQC1WByfCNRdmG4D7+odfGod+n8JPV1I2xrboWw==
 
 through@^2.3.6:
   version "2.3.8"
@@ -7967,31 +7977,37 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-web-ifc-three@^0.0.56:
-  version "0.0.56"
-  resolved "https://registry.yarnpkg.com/web-ifc-three/-/web-ifc-three-0.0.56.tgz#f6f170314ee29270e790f6cf23780d183daa1bf1"
-  integrity sha512-u3hfpJaSc1gBUnDBUNST4oXpq8bL0LPSgfZVy4feFB8V0XBePCEQ4b7/0N+kALNjsX2wObDiHzhFDausECHMMA==
+web-ifc-three@^0.0.68:
+  version "0.0.68"
+  resolved "https://registry.yarnpkg.com/web-ifc-three/-/web-ifc-three-0.0.68.tgz#e21ae111d85cede64865b2ba0da30b540be140b0"
+  integrity sha512-2nMYDWoIV6h/5+bOmHr72YcV9wt6AqrMiCW9t98OTDibyXjUjeIAwoE+msOxoPv4iSDpOpqxTdQCE29Mad9hhA==
   dependencies:
+    "@types/three" "^0.131.0"
     three-mesh-bvh "^0.3.7"
-    web-ifc "^0.0.24"
+    web-ifc "^0.0.25"
 
-web-ifc-viewer@^1.0.45, web-ifc-viewer@^1.0.52:
-  version "1.0.52"
-  resolved "https://registry.yarnpkg.com/web-ifc-viewer/-/web-ifc-viewer-1.0.52.tgz#36cc0fbcd7f275a7f6b62e61afcd1b2b84c5254d"
-  integrity sha512-ajqT975CbCsUGcfcw2fgqXIPcxWCc+r6L7ulDihGwuVCiXzKhUKXsCPWdVIEZz0wOh1vYP5zPl1XaCgmgGZCdg==
+web-ifc-viewer@^1.0.90:
+  version "1.0.90"
+  resolved "https://registry.yarnpkg.com/web-ifc-viewer/-/web-ifc-viewer-1.0.90.tgz#7240b414a9dc922789f45ac831b8af8bf89699cd"
+  integrity sha512-u0IiFe64UgQqKnkKxvGmMHulFJC1ymnPsccmKipZBC+KqRbGgPc3yKUV5wkAtxybjD6XcgIkqdYvVCfxwKXTZQ==
   dependencies:
     "@parametricos/bcf-js" "^0.1.2"
     "@types/stats.js" "^0.17.0"
+    gsap "^3.7.1"
     stats.js "^0.17.0"
     three-mesh-bvh "^0.4.1"
     web-ifc "^0.0.24"
-    web-ifc-three "^0.0.56"
-    web-ifc-viewer "^1.0.45"
+    web-ifc-three "^0.0.68"
 
 web-ifc@^0.0.24:
   version "0.0.24"
   resolved "https://registry.yarnpkg.com/web-ifc/-/web-ifc-0.0.24.tgz#804bb7bb6245f52e913dce638ffe33969cc31740"
   integrity sha512-9AH/LTbPxY1UaFZlwzYL+XuEwfQoROEf0WVz+UmmoTAVsIINq6DbmuiWSyDecWCBYdbanpQoNgJhG5fThWAzMA==
+
+web-ifc@^0.0.25:
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/web-ifc/-/web-ifc-0.0.25.tgz#386b7ce9b7eb6e0ed2998ff72b234d6a71c2de53"
+  integrity sha512-FutpMKz8UtTkSjRD20sfebVOj+vrAKn9vLumaL6MkcjVjsSHhpnelHM7OvUAcZFeNwV69yTme9YAwOuPVZ2n+Q==
 
 webpack-dev-middleware@4.1.0:
   version "4.1.0"
