@@ -24,8 +24,8 @@
     "rxjs": "~6.6.0",
     "three": "^0.133.1",
     "tslib": "^2.1.0",
-    "web-ifc": "^0.0.24",
-    "web-ifc-viewer": "^1.0.90",
+    "web-ifc": "^0.0.28",
+    "web-ifc-viewer": "^1.0.104",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

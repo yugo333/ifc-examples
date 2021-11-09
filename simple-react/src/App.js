@@ -26,8 +26,8 @@ class App extends React.Component {
     componentDidMount() {
         const container = document.getElementById('viewer-container');
         const viewer = new IfcViewerAPI({container});
-        viewer.addAxes()
-        viewer.addGrid()
+        viewer.addAxes();
+        viewer.addGrid();
         viewer.IFC.setWasmPath('../../');
 
         this.viewer = viewer;

@@ -1292,14 +1292,6 @@
     node-gyp "^7.1.0"
     read-package-json-fast "^2.0.1"
 
-"@parametricos/bcf-js@^0.1.2":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@parametricos/bcf-js/-/bcf-js-0.1.3.tgz#aecb248f641567e39db63b1741a5e8678f3ba6e9"
-  integrity sha512-tJdYssZV6Is+ij/ZyZzcPiVd98qjGxs5Muq0se4XjhrtmbDsbeW5XAjWK98o6LlJvj0brpYcuT+/hCZdSBebtw==
-  dependencies:
-    fast-xml-parser "^3.17.5"
-    unzipit "^1.3.5"
-
 "@schematics/angular@12.0.5":
   version "12.0.5"
   resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-12.0.5.tgz#a5d30c7420dca31306adab62faed1083c28536b5"
@@ -1333,6 +1325,11 @@
   version "2.8.10"
   resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.10.tgz#61cc8469849e5bcdd0c7044122265c39cec10cf4"
   integrity sha512-C7srjHiVG3Ey1nR6d511dtDkCEjxuN9W1HWAEjGq8kpcwmNM6JJkpC0xvabM7BXTG2wDq8Eu33iH9aQKa7IvLQ==
+
+"@types/dat.gui@^0.7.7":
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/@types/dat.gui/-/dat.gui-0.7.7.tgz#2125aedfaa190364c5a50b0447858a7e159aea2e"
+  integrity sha512-CxLCme0He5Jk3uQwfO/fGZMyNhb/ypANzqX0yU9lviBQMlen5SOvQTBQ/Cd9x5mFlUAK5Tk8RgvTyLj1nYkz+w==
 
 "@types/eslint-scope@^3.7.0":
   version "3.7.0"
@@ -1412,11 +1409,6 @@
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@types/source-list-map/-/source-list-map-0.1.2.tgz#0078836063ffaf17412349bba364087e0ac02ec9"
   integrity sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==
-
-"@types/stats.js@^0.17.0":
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/@types/stats.js/-/stats.js-0.17.0.tgz#0ed81d48e03b590c24da85540c1d952077a9fe20"
-  integrity sha512-9w+a7bR8PeB0dCT/HBULU2fMqf6BAzvKbxFboYhmDtDkKPiyXYbjoe2auwsXlEFI7CFNMF1dCv3dFH5Poy9R1w==
 
 "@types/three@^0.129.1":
   version "0.129.1"
@@ -2212,6 +2204,11 @@ camelcase@^6.2.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-6.2.0.tgz#924af881c9d525ac9d87f40d964e5cea982a1809"
   integrity sha512-c7wVvbw3f37nuobQNtgsgG9POC9qMbNuMQmTCqZv23b6MIz0fcYpBiOlv9gEN/hdLdnZTDQhg6e9Dq5M1vKvfg==
 
+camera-controls@^1.33.1:
+  version "1.33.1"
+  resolved "https://registry.yarnpkg.com/camera-controls/-/camera-controls-1.33.1.tgz#0f4815919f04da6b0427f530566dfe6ea17f4568"
+  integrity sha512-+l0LgV+w0G4GAtwiSahHLj7rCqzVMSa+/BHE3+aE7vdku2B9QF8CXgDSlCH9cBt2TZeg+WQSkRPeIYwjvtjdPw==
+
 caniuse-api@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/caniuse-api/-/caniuse-api-3.0.0.tgz#5e4d90e2274961d46291997df599e3ed008ee4c0"
@@ -2849,6 +2846,11 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
+dat.gui@^0.7.7:
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/dat.gui/-/dat.gui-0.7.7.tgz#7f96dbd21621a76385203659aebfa264ee6ae89b"
+  integrity sha512-sRl/28gF/XRC5ywC9I4zriATTsQcpSsRG7seXCPnTkK8/EQMIbCu5NPMpICLGxX9ZEUvcXR3ArLYCtgreFoMDw==
+
 date-format@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/date-format/-/date-format-2.1.0.tgz#31d5b5ea211cf5fd764cd38baf9d033df7e125cf"
@@ -3430,11 +3432,6 @@ fast-json-stable-stringify@2.1.0, fast-json-stable-stringify@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz#874bf69c6f404c2b5d99c481341399fd55892633"
   integrity sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==
-
-fast-xml-parser@^3.17.5:
-  version "3.19.0"
-  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-3.19.0.tgz#cb637ec3f3999f51406dd8ff0e6fc4d83e520d01"
-  integrity sha512-4pXwmBplsCPv8FOY1WRakF970TjNGnGnfbOnLqjlYvMiF1SR3yOHyxMR/YCXpPTOspNF5gwudqktIP4VsWkvBg==
 
 fastq@^1.6.0:
   version "1.11.0"
@@ -6428,6 +6425,11 @@ postcss@^8.2.10, postcss@^8.2.9:
     nanoid "^3.1.23"
     source-map-js "^0.6.2"
 
+postprocessing@^6.23.1:
+  version "6.23.2"
+  resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-6.23.2.tgz#51b0e0265fa2b70ff5ed043d3c53970e177d1ee1"
+  integrity sha512-DnkWnZzVPXMl3/fhqWDDRZ2BnD08OCxqNpOx2xaj04sg5ShjMj4Gq1pNfUJZqzoUzr3IVJJD7UZP9DWGFp6jyw==
+
 pretty-bytes@^5.3.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-5.6.0.tgz#356256f643804773c82f64723fe78c92c62beaeb"
@@ -7354,11 +7356,6 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
-stats.js@^0.17.0:
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/stats.js/-/stats.js-0.17.0.tgz#b1c3dc46d94498b578b7fd3985b81ace7131cc7d"
-  integrity sha1-scPcRtlEmLV4t/05hbgaznExzH0=
-
 "statuses@>= 1.4.0 < 2", "statuses@>= 1.5.0 < 2", statuses@~1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
@@ -7846,13 +7843,6 @@ unset-value@^1.0.0:
     has-value "^0.3.1"
     isobject "^3.0.0"
 
-unzipit@^1.3.5:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/unzipit/-/unzipit-1.3.5.tgz#3ee48a478a3b7e248d65d3bc0bb189a8d63c3ce1"
-  integrity sha512-GNJVu1nkQYaw9ploGIuXzrP9bE6y+/V748P3RsMn8W0fHEEkecwd+SHwKH9jXOSuBAKTEOqqF66k0GfFQZ1ReA==
-  dependencies:
-    uzip-module "^1.0.2"
-
 upath@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/upath/-/upath-1.2.0.tgz#8f66dbcd55a883acdae4408af8b035a5044c1894"
@@ -7910,11 +7900,6 @@ uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
-
-uzip-module@^1.0.2:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/uzip-module/-/uzip-module-1.0.3.tgz#6bbabe2a3efea5d5a4a47479f523a571de3427ce"
-  integrity sha512-AMqwWZaknLM77G+VPYNZLEruMGWGzyigPK3/Whg99B3S6vGHuqsyl5ZrOv1UUF3paGK1U6PM0cnayioaryg/fA==
 
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
@@ -7977,37 +7962,33 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-web-ifc-three@^0.0.68:
-  version "0.0.68"
-  resolved "https://registry.yarnpkg.com/web-ifc-three/-/web-ifc-three-0.0.68.tgz#e21ae111d85cede64865b2ba0da30b540be140b0"
-  integrity sha512-2nMYDWoIV6h/5+bOmHr72YcV9wt6AqrMiCW9t98OTDibyXjUjeIAwoE+msOxoPv4iSDpOpqxTdQCE29Mad9hhA==
+web-ifc-three@^0.0.81:
+  version "0.0.81"
+  resolved "https://registry.yarnpkg.com/web-ifc-three/-/web-ifc-three-0.0.81.tgz#785463150e248ed77d671fa9e020e15915a01ffa"
+  integrity sha512-Pyd1m69g7ceEgmCzCDlmVaLoA03sOdiTw6MHDxwS+9CDtWjP99IA9pJRPVCVNFTu9YaZbaILbPJ6PNjAzpVhcw==
   dependencies:
     "@types/three" "^0.131.0"
     three-mesh-bvh "^0.3.7"
-    web-ifc "^0.0.25"
+    web-ifc "^0.0.28"
 
-web-ifc-viewer@^1.0.90:
-  version "1.0.90"
-  resolved "https://registry.yarnpkg.com/web-ifc-viewer/-/web-ifc-viewer-1.0.90.tgz#7240b414a9dc922789f45ac831b8af8bf89699cd"
-  integrity sha512-u0IiFe64UgQqKnkKxvGmMHulFJC1ymnPsccmKipZBC+KqRbGgPc3yKUV5wkAtxybjD6XcgIkqdYvVCfxwKXTZQ==
+web-ifc-viewer@^1.0.104:
+  version "1.0.104"
+  resolved "https://registry.yarnpkg.com/web-ifc-viewer/-/web-ifc-viewer-1.0.104.tgz#d0776883ff7af963aad69cc1670be8ee6893164b"
+  integrity sha512-D/C0QmVkphtM4LT5LnitqDnlA9T5eC14ZS9LVHTbdGOuSmZnYRuSZnU5Z0wgpkOt5Z5f69P5wEAgHjEZiDkCNg==
   dependencies:
-    "@parametricos/bcf-js" "^0.1.2"
-    "@types/stats.js" "^0.17.0"
+    "@types/dat.gui" "^0.7.7"
+    camera-controls "^1.33.1"
+    dat.gui "^0.7.7"
     gsap "^3.7.1"
-    stats.js "^0.17.0"
+    postprocessing "^6.23.1"
     three-mesh-bvh "^0.4.1"
-    web-ifc "^0.0.24"
-    web-ifc-three "^0.0.68"
+    web-ifc "0.0.28"
+    web-ifc-three "^0.0.81"
 
-web-ifc@^0.0.24:
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/web-ifc/-/web-ifc-0.0.24.tgz#804bb7bb6245f52e913dce638ffe33969cc31740"
-  integrity sha512-9AH/LTbPxY1UaFZlwzYL+XuEwfQoROEf0WVz+UmmoTAVsIINq6DbmuiWSyDecWCBYdbanpQoNgJhG5fThWAzMA==
-
-web-ifc@^0.0.25:
-  version "0.0.25"
-  resolved "https://registry.yarnpkg.com/web-ifc/-/web-ifc-0.0.25.tgz#386b7ce9b7eb6e0ed2998ff72b234d6a71c2de53"
-  integrity sha512-FutpMKz8UtTkSjRD20sfebVOj+vrAKn9vLumaL6MkcjVjsSHhpnelHM7OvUAcZFeNwV69yTme9YAwOuPVZ2n+Q==
+web-ifc@0.0.28, web-ifc@^0.0.28:
+  version "0.0.28"
+  resolved "https://registry.yarnpkg.com/web-ifc/-/web-ifc-0.0.28.tgz#660acc9b30d6b7521cd70192f887f87c98df83f8"
+  integrity sha512-KEIuiZL8SUA3W7pdwsJm54MQ8AM5jk3zgC5K9fLb+tLZSg3UR9JxGcWGam3ZHc/HkAVR+2gH0uc3yofBkI0Kfw==
 
 webpack-dev-middleware@4.1.0:
   version "4.1.0"

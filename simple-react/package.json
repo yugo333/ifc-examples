@@ -20,9 +20,9 @@
     "react-dropzone": "^11.3.2",
     "react-scripts": "4.0.3",
     "react-spring": "^9.2.1",
-    "three": "^0.128.0",
+    "three": "^0.134.0",
     "typescript": "^4.3.2",
-    "web-ifc-viewer": "latest",
+    "web-ifc-viewer": "^1.0.103",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

@@ -31,7 +31,6 @@ export class IfcService {
     });
     this.ifcViewer.addAxes();
     this.ifcViewer.addGrid();
-    this.ifcViewer.addStats('position:absolute;bottom:0px;left:0px;z-index:1;');
     this.ifcViewer.IFC.setWasmPath('assets/');
   }
 
