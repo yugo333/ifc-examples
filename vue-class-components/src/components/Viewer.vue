@@ -54,6 +54,8 @@ export default class Viewer extends Vue {
       this.$toasted.success('File loaded successfully')
     } catch (error) {
       this.$toasted.error(error)
+    } finally {
+      this.uploadStatus = ''
     }
   }
 
