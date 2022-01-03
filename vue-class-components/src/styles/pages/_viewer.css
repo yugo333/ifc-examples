@@ -1,0 +1,35 @@
+.viewer-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.upload-file-input {
+  display: flex;
+  align-items: center;
+}
+
+.upload-file-button {
+  width: 6rem;
+  padding: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.viewer-properties-text {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0;
+  z-index: 100;
+  color: white;
+}
+
+.viewer-upload-status {
+  color: white;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
