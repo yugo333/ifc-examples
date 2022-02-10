@@ -65,7 +65,7 @@ const IfcContainer = forwardRef<HTMLDivElement, IfcContainerProps>((props, ref) 
         ref={ref}
         onDoubleClick={ifcOnClick}
         onContextMenu={ifcOnRightClick}
-        onMouseMove={viewer && viewer.IFC.prePickIfcItem}
+        onMouseMove={() => viewer && viewer.IFC.selector.prePickIfcItem()}
       />
       <Popover
         id={id}
