@@ -36,3 +36,48 @@
     transform: rotate(360deg);
   }
 }
+
+.listParent {
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  cursor: pointer;
+  width: 150px;
+}
+.list {
+  background-color: rgb(209, 209, 209);
+}
+.floor {
+  margin-top: 0;
+}
+.floor:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.modelDetail {
+  background: rgb(151, 151, 151);
+  opacity: 0.9;
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+}
+
+.typeList {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  cursor: pointer;
+}
+.ot {
+  width: 200px;
+  height: 400px;
+  overflow-y: scroll;
+  opacity: 0.8;
+  background-color: rgb(209, 209, 209);
+}
+.type {
+  margin-top: 0;
+}
+.type:hover {
+  background-color: rgb(255, 255, 255);
+}
