@@ -1,14 +1,20 @@
 import "./App.css";
 import { IfcViewerAPI } from "web-ifc-viewer";
-import { Backdrop, CircularProgress, IconButton } from "@material-ui/core";
+import { Backdrop, CircularProgress, IconButton } from "@mui/material";
 import React from "react";
 import Dropzone from "react-dropzone";
 import BcfDialog from "./components/BcfDialog";
 import { TypeList, TypeListName } from "./typeList";
 
 //Icons
-import FolderOpenOutlinedIcon from "@material-ui/icons/FolderOpenOutlined";
-import CropIcon from "@material-ui/icons/Crop";
+import FolderOpenOutlinedIcon from "@mui/icons-material/FolderOpenOutlined";
+import CropIcon from "@mui/icons-material/Crop";
+import ViewInArIcon from "@mui/icons-material/ViewInAr";
+import CameraswitchIcon from "@mui/icons-material/Cameraswitch";
+
+// three
+import * as THREE from "three";
+import { TransformControls } from "three/examples/jsm/controls/TransformControls";
 
 // https://zenn.dev/masamiki/articles/c9a34119acfd6c
 
@@ -42,13 +48,12 @@ class App extends React.Component {
   componentDidMount() {
     const container = document.getElementById("viewer-container");
     const viewer = new IfcViewerAPI({ container });
-    viewer.axes.setAxes();
+    this.container = container;
+    // viewer.axes.setAxes();
     viewer.grid.setGrid();
     viewer.IFC.setWasmPath("../../");
 
     this.viewer = viewer;
-    this.scene = this.viewer.context.scene.scene;
-    this.render = this.viewer.context.renderer.renderer;
 
     window.onmousemove = this.viewer.prepickIfcItem;
     window.ondblclick = this.viewer.clipper.createPlane();
@@ -154,7 +159,7 @@ class App extends React.Component {
   };
 
   handleDblclick = async () => {
-    if (this.state.loaded) {
+    if (this.state.loaded && this.state.objTypeToggle) {
       let value = {};
       const models = this.viewer.context.items.ifcModels;
       if (models.length === 0) return;
@@ -244,6 +249,123 @@ class App extends React.Component {
     // console.log(this.viewer.IFC);
   };
 
+  // IFC外でのmodel描画
+  createModel = () => {
+    this.scene = this.viewer.context.scene.scene;
+    this.camera = this.viewer.context.ifcCamera.perspectiveCamera;
+    this.controls = this.viewer.context.ifcCamera.cameraControls;
+    this.renderer = this.viewer.context.renderer.renderer;
+    console.log(this.viewer);
+
+    this.clock = new THREE.Clock();
+
+    this.uniforms = {
+      uTime: { value: 1.0 },
+    };
+
+    const v = `
+    varying vec2 vUv;
+
+    void main()
+    {
+      vUv = uv;
+      vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+      gl_Position = projectionMatrix * mvPosition;
+    }`;
+    const f = `
+    uniform float uTime;
+
+    varying vec2 vUv;
+    
+    void main( void ) {
+        // ここで面の対格のvecの双方からグラデーションさせる。vUvだけでは0→1の方向にグラデーションが起きる
+        vec2 position = - 1.0 + 2.0 * vUv;
+    
+        float red = abs( sin( position.x * position.y  + uTime/5.0 ) );
+        float green = abs( sin( position.x * position.y  + uTime/4.0 ) );
+        float blue = abs( sin( position.x * position.y  + uTime/3.0 ) );
+        gl_FragColor = vec4( red, green, blue, 1.0 );
+    }`;
+    // ボックス
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.ShaderMaterial({
+      uniforms: this.uniforms,
+      vertexShader: v,
+      fragmentShader: f,
+    });
+    this.cube = new THREE.Mesh(geometry, material);
+    this.cube.name = "cube";
+    this.cube.position.y = 3;
+    this.scene.add(this.cube);
+
+    const transControls = new TransformControls(
+      this.camera,
+      this.renderer.domElement
+    );
+    this.ray(transControls);
+
+    this.createModelAnime();
+  };
+  // IFC外でのmodel描画後アニメーション
+  createModelAnime = () => {
+    const delta = this.clock.getDelta();
+    this.uniforms["uTime"].value += delta * 5;
+
+    this.cube.rotation.x += 0.01;
+    this.cube.rotation.y += 0.01;
+    requestAnimationFrame(this.createModelAnime);
+  };
+
+  // threeでのmodelに対してのrayCaster
+  ray = (transControls) => {
+    // レイキャストを作成/////////////////////////////////////////////////
+    const canvas = this.container;
+    // console.log()
+    const rayCasterClick = new THREE.Raycaster();
+    const mouseClick = new THREE.Vector2();
+    // マウスイベントを登録
+    // console.log(scene);
+    canvas.addEventListener("click", (event) => {
+      if (this.state.objTypeToggle === false) {
+        const element = event.currentTarget;
+        // canvas要素上のXY座標
+        const x = event.clientX - element.offsetLeft;
+        const y = event.clientY - element.offsetTop;
+        // canvas要素の幅・高さ
+        const w = element.offsetWidth;
+        const h = element.offsetHeight;
+        // -1〜+1の範囲で現在のマウス座標を登録する
+        mouseClick.x = (x / w) * 2 - 1;
+        mouseClick.y = -(y / h) * 2 + 1;
+
+        rayCasterClick.setFromCamera(mouseClick, this.camera);
+        // その光線とぶつかったオブジェクトを得る
+        const intersects = rayCasterClick.intersectObjects(
+          this.scene.children,
+          false
+        );
+        if (intersects.length > 0) {
+          // console.log(intersects[0].object);
+          if (intersects[0].object.name === "cube") {
+            this.controls._enabled = false;
+            transControls.attach(intersects[0].object);
+            this.scene.add(transControls);
+          } else {
+            this.controls._enabled = true;
+            // 何もないところでclickでtransControls消える
+            transControls.detach();
+            this.scene.add(transControls);
+          }
+        } else {
+          this.controls._enabled = true;
+          // 何もないところでclickでtransControls消える
+          transControls.detach();
+          this.scene.add(transControls);
+        }
+      }
+    });
+  };
+
   render() {
     return (
       <>
@@ -260,6 +382,21 @@ class App extends React.Component {
             <IconButton onClick={this.handleToggleClipping}>
               <CropIcon />
             </IconButton>
+            <IconButton onClick={this.createModel}>
+              <ViewInArIcon />
+            </IconButton>
+            <IconButton
+              onClick={() =>
+                this.setState({ objTypeToggle: !this.state.objTypeToggle })
+              }
+            >
+              <CameraswitchIcon />
+            </IconButton>
+            {this.state.objTypeToggle === true ? (
+              <p style={{ marginTop: 0 }}> IFC</p>
+            ) : (
+              <p style={{ marginTop: 0 }}> Model</p>
+            )}
           </aside>
           <Dropzone ref={this.dropzoneRef} onDrop={this.onDrop}>
             {({ getRootProps, getInputProps }) => (
